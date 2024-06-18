@@ -1,6 +1,6 @@
 package conta.model;
 
-public class Conta {
+public abstract class Conta {
 
 	  private int numero;
 		private int agencia;
@@ -9,11 +9,12 @@ public class Conta {
 		private float saldo;
 
 		public Conta(int numero, int agencia, int tipo, String titular, float saldo) {
-			this.numero = numero;
+			this.numero = numero; 
 			this.agencia = agencia;
 			this.tipo = tipo;
 			this.titular = titular;
 			this.saldo = saldo;
+	
 		}
 
 		public int getNumero() {
@@ -61,18 +62,18 @@ public class Conta {
 			if(this.getSaldo() < valor) {
 				System.out.println("\n Saldo Insuficiente!");
 				return false;
-			}
-				
+			
+		}
 			this.setSaldo(this.getSaldo() - valor);
 			return true;
+			
 		}
-
 		public void depositar(float valor) {
 
 			this.setSaldo(this.getSaldo() + valor);
-
+	
 		}
-		
+			
 		public void visualizar() {
 
 			String tipo = "";
@@ -94,9 +95,15 @@ public class Conta {
 			System.out.println("Tipo da Conta: " + tipo);
 			System.out.println("Titular: " + this.titular);
 			System.out.println("Saldo: " + this.saldo);
+			
+			
+			
+			
+			
+			
 
-		}
-	  
-	}
+}
+		
+}	
 	
 
